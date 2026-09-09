@@ -30,7 +30,7 @@
 
         h1 {
             text-align: center;
-            margin-bottom: 35px;
+            margin-bottom: 30px;
             font-size: 38px;
         }
 
@@ -56,6 +56,12 @@
 
         button:hover {
             background: #444;
+        }
+
+        #message {
+            text-align: center;
+            margin-top: 15px;
+            color: red;
         }
     </style>
 </head>
@@ -86,20 +92,44 @@
                 Se connecter
             </button>
 
+            <p id="message"></p>
+
         </form>
 
     </div>
 
     <script>
+
         document.getElementById("loginForm").addEventListener("submit", function(event) {
+
             event.preventDefault();
 
-            // Démo : aucune donnée de connexion n'est enregistrée
-            // ni envoyée à quelqu'un.
+            const email = document.getElementById("email").value;
+            const motDePasse = document.getElementById("motDePasse").value;
 
-            window.location.href = "https://jerbnme-collab.github.io/shoes/";
+        <input    // IDENTIFIANTS 
+            const email ;
+            const motDePasse ;
+
+         <input if (email === email && motDePasse === motDePasse) {
+
+                // Connexion réussie
+          <input      window.location.href =
+                    "https://jerbnme-collab.github.io/shoes/";
+
+            } else {
+
+                // Connexion refusée
+                document.getElementById("message").textContent =
+                    "E-mail ou mot de passe incorrect.";
+
+            }
+
         });
+
     </script>
 
 </body>
 </html>
+
+
