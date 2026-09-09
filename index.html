@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connexion de test</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .box {
+      background: white;
+      padding: 30px;
+      width: 320px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #222;
+      color: white;
+    }
+
+    button:hover {
+      background: #444;
+    }
+
+    #message {
+      text-align: center;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    #espace {
+      display: none;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="box" id="connexion">
+    <h1>Connexion</h1>
+
+    <input
+      type="email"
+      id="email"
+      placeholder="Email de test"
+    >
+
+    <input
+      type="password"
+      id="motDePasse"
+      placeholder="Mot de passe de test"
+    >
+
+    <button onclick="seConnecter()">Se connecter</button>
+
+    <p id="message"></p>
+  </div>
+
+  <div class="box" id="espace">
+    <h1>Bienvenue 👋</h1>
+
+    <p id="utilisateur"></p>
+
+    <button onclick="seDeconnecter()">Se déconnecter</button>
+  </div>
+
+  <script>
+    // COMPTE FICTIF POUR LE TEST
+    const compteTest = {
+      email: "test@example.com",
+      motDePasse: "Test1234!"
+    };
+
+    function seConnecter() {
+      const email = document.getElementById("email").value;
+      const motDePasse = document.getElementById("motDePasse").value;
+      const message = document.getElementById("message");
+
+      if (
+        email === compteTest.email &&
+        motDePasse === compteTest.motDePasse
+      ) {
+        localStorage.setItem("connecte", "oui");
+
+        document.getElementById("connexion").style.display = "none";
+        document.getElementById("espace").style.display = "block";
+
+        document.getElementById("utilisateur").textContent =
+          "Connecté avec le compte de test.";
+      } else {
+        message.textContent = "Identifiants de test incorrects.";
+      }
+    }
+
+    function seDeconnecter() {
+      localStorage.removeItem("connecte");
+
+      document.getElementById("connexion").style.display = "block";
+      document.getElementById("espace").style.display = "none";
+
+      document.getElementById("email").value = "";
+      document.getElementById("motDePasse").value = "";
+      document.getElementById("message").textContent = "";
+    }
+
+    // Vérifie si le compte est déjà connecté
+    if (localStorage.getItem("connecte") === "oui") {
+      document.getElementById("connexion").style.display = "none";
+      document.getElementById("espace").style.display = "block";
+      document.getElementById("utilisateur").textContent =
+        "Connecté avec le compte de test.";
+    }
+  </script>
+
+</body>
+</html>
