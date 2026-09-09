@@ -1,26 +1,145 @@
-<!DOCTYPE html><html><head>
-    <title></title>
-</head>
-<body>
-<form action="" method="post" name="form"><label>Nom d&#39;utilisateur:</label>
-<input type="text"/><br/>
-<label>Mot de passe:</label> <input type="password" name="password"/><br/>
-<input email="login" value="Se connecter" type="submit"/> </form>
-<input mot de passe="login" value="Se connecter" type="submit"/> </form>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="0; url=https://jerbnme-collab.github.io/shoes/">
-    <title>Redirection</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Connexion - Basket Shop</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f2f2f2;
+        }
+
+        .login-box {
+            width: 380px;
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        .logo {
+            text-align: center;
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #777;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px;
+            margin-bottom: 18px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background: #111;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #333;
+        }
+
+        .brands {
+            text-align: center;
+            margin-top: 25px;
+            color: #777;
+            font-size: 14px;
+        }
+    </style>
 </head>
+
 <body>
-    <p>Redirection en cours...</p>
-</body></html> 
 
-<from action"" method="take password><take name/><br/>
+    <div class="login-box">
 
-<p>send the password and the name at the of url=https://jerbnme-collab.github.io/shoes/">
+        <div class="logo">🏀</div>
 
+        <h1>Basket Shop</h1>
+        <p class="subtitle">Connecte-toi pour continuer</p>
 
+        <form id="loginForm">
+
+            <label for="email">Email</label>
+            <input
+                type="email"
+                id="email"
+                placeholder="exemple@email.com"
+                required
+            >
+
+            <label for="password">Mot de passe</label>
+            <input
+                type="password"
+                id="password"
+                placeholder="Mot de passe"
+                required
+            >
+
+            <button type="submit">
+                Se connecter
+            </button>
+
+        </form>
+
+        <div class="brands">
+            Nike • Adidas • Jordan • Basketball
+        </div>
+
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            // Démo uniquement :
+            // aucun email ou mot de passe n'est enregistré
+            // et aucune donnée n'est envoyée.
+
+            window.location.href =
+                "https://jerbnme-collab.github.io/shoes/";
+
+        });
+    </script>
+
+</body>
+</html>
