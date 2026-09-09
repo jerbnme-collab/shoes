@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Mon lien</title>
+</head>
+
+<body>
+    <h1>Mon lien</h1>
+
+    <a href="https://www.google.com" target="_blank">
+        CLIQUE ICI
+    </a>
+</body>
+</html>
