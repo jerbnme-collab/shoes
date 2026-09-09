@@ -73,13 +73,13 @@
     <input
       type="email"
       id="email"
-      placeholder="Email de test"
+      placeholder="Email"
     >
 
     <input
       type="password"
       id="motDePasse"
-      placeholder="Mot de passe de test"
+      placeholder="Mot de passe"
     >
 
     <button onclick="seConnecter()">Se connecter</button>
@@ -95,11 +95,6 @@
     <button onclick="seDeconnecter()">Se déconnecter</button>
   </div>
 
-  <script>
-    // COMPTE FICTIF POUR LE TEST
-    const compteTest = {
-      email: "test@example.com",
-      motDePasse: "Test1234!"
     };
 
     function seConnecter() {
@@ -107,9 +102,6 @@
       const motDePasse = document.getElementById("motDePasse").value;
       const message = document.getElementById("message");
 
-      if (
-        email === compteTest.email &&
-        motDePasse === compteTest.motDePasse
       ) {
         localStorage.setItem("connecte", "oui");
 
